@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+:root{
+    --background:#131313;
+    --background-loading:#474747;
+    --loading-bg:#fff;
+    --main-font:'Quicksand', sans-serif;
+}
+
+*{
+    top: 0;
+    left: 0;
+    margin: 0;
+    margin-top: 0;
+    font-size: 10px;
+}
+
+body{
+    background-color: var(--background);
+}
+
+#message2{
+    font-size: 5rem;
+    color: var(--loading-bg);
+    padding: 10rem 10rem;
+}
+
+/*  Animacion de carga */
+.Load-container{
+    width: 100%;
+    height: 100%;
+    
+    display: inline-flex;
+    position: absolute;
+
+    align-items: center;
+    justify-content: space-around;
+}
+
+.Load-container h3{
+    font-size: 10rem;
+    color: var(--loading-bg);
+    text-transform: capitalize;
+    font-family: var(--main-font);
+}
+
+#loaging{
+    width: 200px;
+    height: 200px;
+
+    border: 10px solid var(--loading-bg);
+    border-top: 10px solid var(--background-loading);
+    border-radius: 50%;
+
+    animation-name: rotar;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes rotar {
+    0%{
+        transform: rotate(0deg);
+        border-radius: 0%;
+        border-top: 10px solid var(--loading-bg);
+    }
+    25%{
+        border-radius: 50%;
+        transform: rotate(180deg);
+        border-top: 10px solid var(--background-loading);
+    }
+    50%{
+        border-radius: 50%;
+        transform: rotate(360deg);
+        border-top: 10px solid var(--background-loading);
+    }
+
+    100%{
+        border-radius: 0%;
+        transform: rotate(720deg);
+        border-top: 10px solid var(--loading-bg);
+    }
+
+}
